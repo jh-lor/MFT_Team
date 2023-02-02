@@ -19,12 +19,12 @@ class Trader:
 
 class BullishTrader(Trader):
     def MakeTrades(self, time, stock_prices):
-        return {"Stock1": 1000000}
+        return {"Stock1": 1000000, "Stock2": 1000000, "Stock3": 1000000, "Stock4": 1000000}
 
 
 class BearishTrader(Trader):
     def MakeTrades(self, time, stock_prices):
-        return {"Stock1": -1000000}
+        return {"Stock1": -1000000, "Stock2": -1000000, "Stock3": -1000000, "Stock4": -1000000}
 
 
 class SampleTrader(Trader):
