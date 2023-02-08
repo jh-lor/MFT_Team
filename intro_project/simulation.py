@@ -31,10 +31,9 @@ class Game:
         position_dict = {stock: [] for stock in stock_list}
         bought_data_list = [
             stock+"_Delay" if stock in delay_list else stock for stock in stock_list]
-        price_history_bought = self.price_history.loc[:, bought_data_list]
 
-        for idx, row in price_history_bought.iterrows():
-            trades = self.trader.MakeTrades(idx, row)
+        for idx, row in self.price_history.iterrows():
+            trades = self.trader.MakeTrades(idx, row[bought_data_list])
             net_notional = 0
             for stock in stock_list:
                 allowed_notional = min(
